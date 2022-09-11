@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 //Data Binding From VIEW To MODULE
 import { Livre } from '../model/livre.model';
-
+import { ActivatedRoute, Router } from '@angular/router';
 //service
 import { LivreService } from '../services/livre.service';
 
@@ -18,7 +18,9 @@ export class AddLivreComponent implements OnInit {
   message : string;
 
   /*service*/
-  constructor(private livreService: LivreService) { }
+  constructor(private livreService: LivreService,
+                    private router : Router
+                  ) { }
 
 
 
@@ -33,7 +35,8 @@ export class AddLivreComponent implements OnInit {
     
     this.livreService.ajouterLivre(this.newLivre);
   
-    this.message = "Livre " + this.newLivre.titreLivre + " ajouté avec succès !";
+    //this.message = "Livre " + this.newLivre.titreLivre + " ajouté avec succès !";
+    this.router.navigate(['livres']);
     }
 
 }

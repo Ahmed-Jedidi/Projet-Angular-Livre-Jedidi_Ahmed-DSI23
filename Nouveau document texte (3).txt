@@ -1,0 +1,8 @@
+import { ActivatedRoute, Router } from '@angular/router';
+
+
+,
+                private activatedRoute: ActivatedRoute,
+               private router : Router
+
+this.router.navigate(['livres']);
